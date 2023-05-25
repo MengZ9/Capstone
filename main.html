@@ -1,43 +1,60 @@
 <!DOCTYPE HTML>
 <html lang="en">
-   <head>
-      <h2>LeetCode Question No. 1402: Reducing Dishes</h2>
 
-   </head>
-   <body>
-        <p>A chef has collected data on the satisfaction level of his n dishes. Chef can cook any dish in 1 unit of time.</p>
-        <p>Like-time coefficient of a dish is defined as the time taken to cook that dish including previous dishes multiplied by its satisfaction level i.e. time[i] * satisfaction[i].</p>
-        <p>Return the maximum sum of like-time coefficient that the chef can obtain after dishes preparation.</p>
-        <p>Dishes can be prepared in any order and the chef can discard some dishes to get this maximum value.</p>
+<head>
+    <h2>LeetCode Question No. 1402: Reducing Dishes</h2>
 
-        <section id = "Examples">
-            <div id ="Example1">
+</head>
+<link href="style.css" rel="stylesheet">
+
+<body>
+    <section id="buttons">
+        <button onclick="window.location.href='main.html'">Question</button>
+        <button onclick="window.location.href='explanation.html'">Explanation</button>
+        <button onclick="window.location.href='answer.html'">Answer</button>
+    </section>
+
+    <section id="question">
+        <p>A chef has collected data on the satisfaction level of his <code>n</code> dishes. Chef can cook any dish in 1
+            unit of time. Like-time coefficient of a dish is defined as the time taken to cook that dish including
+            previous dishes
+            multiplied by its satisfaction level <code>i.e. time[i] * satisfaction[i].</code>
+            Return the maximum sum of like-time coefficient that the chef can obtain after dishes preparation.
+            Dishes can be prepared in any order and the chef can discard some dishes to get this maximum value.</p>
+    </section>
+
+    <section id="Examples">
+        <div id="Example1">
             <b>Example 1:</b><br>
             <div><b>Input:</b> satisfaction = [-1,-8,0,5,-9]</div>
-            <div><b>Output:</b>14</div>
-            <div><b>Explanation:</b> After Removing the second and last dish, the maximum total like-time 
-                coefficient will be equal to (-1*1 + 0*2 + 5*3 = 14). Each dish is prepared in one unit of time.</div>
-            </div>
-            <br>
+            <div><b>Output: </b>14</div>
+            <div><b>Explanation:</b> After Removing the second and last dish, the maximum total like-time
+                coefficient will be equal to <code>(-1*1 + 0*2 + 5*3 = 14)</code>. Each dish is prepared in one unit
+                of
+                time.</div>
 
-            <div id ="Example2">
+        </div>
+        <br>
+
+        <div id="Example2">
             <b>Example 2:</b><br>
             <div><b>Input:</b> satisfaction = [4,3,2]</div>
-            <div><b>Output:</b>20</div>
-            <div><b>Explanation:</b> Dishes can be prepared in any order, (2*1 + 3*2 + 4*3 = 20)</div>
-            </div>
+            <div><b>Output: </b>20</div>
+            <div><b>Explanation:</b> Dishes can be prepared in any order, <code>(2*1 + 3*2 + 4*3 = 20)</code></div>
 
-            <br>
-            <div id = "Example3">
+        </div>
+
+        <br>
+        <div id="Example3">
             <b>Example 3:</b><br>
-            <div><b>Input:</b> satisfaction = [-1,-4,-5]</div>
-            <div><b>Output:</b>0</div>
-            <div><b>Explanation:</b> People do not like the dishes. No dish is prepared.</div>
-            </div>
-        </section>
 
-        <section id = "answer">
-            <p>answer code part tbd</p>
-        </section>
-   </body>
+            <div><b>Input:</b> satisfaction = [-1,-4,-5]</div>
+            <div><b>Output: </b>0</div>
+            <div><b>Explanation:</b> People do not like the dishes. No dish is prepared.</div>
+
+        </div>
+    </section>
+
+</body>
+
 </html>
