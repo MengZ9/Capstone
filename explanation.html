@@ -3,9 +3,9 @@
 
 <head>
     <h2>LeetCode Question No. 1402: Reducing Dishes</h2>
-
 </head>
 <link href="style.css" rel="stylesheet">
+
 
 <body>
     <section id="buttons">
@@ -14,44 +14,53 @@
         <button onclick="window.location.href='answer.html'">Answer</button>
     </section>
 
-    <section id="question">
-        <p>A chef has collected data on the satisfaction level of his <code>n</code> dishes. Chef can cook any dish in 1
-            unit of time. Like-time coefficient of a dish is defined as the time taken to cook that dish including
-            previous dishes
-            multiplied by its satisfaction level <code>i.e. time[i] * satisfaction[i].</code>
-            Return the maximum sum of like-time coefficient that the chef can obtain after dishes preparation.
-            Dishes can be prepared in any order and the chef can discard some dishes to get this maximum value.</p>
-    </section>
-
-    <section id="Examples">
-        <div id="Example1">
-            <b>Example 1:</b><br>
-            <div><b>Input:</b> satisfaction = [-1,-8,0,5,-9]</div>
-            <div><b>Output: </b>14</div>
-            <div><b>Explanation:</b> After Removing the second and last dish, the maximum total like-time
-                coefficient will be equal to <code>(-1*1 + 0*2 + 5*3 = 14)</code>. Each dish is prepared in one unit
-                of
-                time.</div>
-
-        </div>
-        <br>
-
-        <div id="Example2">
-            <b>Example 2:</b><br>
-            <div><b>Input:</b> satisfaction = [4,3,2]</div>
-            <div><b>Output: </b>20</div>
-            <div><b>Explanation:</b> Dishes can be prepared in any order, <code>(2*1 + 3*2 + 4*3 = 20)</code></div>
-
+    <section id="process">
+        <p>1. First, arrange the customer satisfaction scores in ascending order. This step will help the calculation of the maximum value later.</p>
+        <div id = "codeForm">
+            <code id = "code"> Arrays.sort(satisfaction); </code>
         </div>
 
-        <br>
-        <div id="Example3">
-            <b>Example 3:</b><br>
+        <p>2. Initialize a variable called max and set its value to 0. Our goal is to identify dishes that produce the highest customer satisfaction. 
+            This variable will hold the highest satisfaction score and will be returned at the end of the process. 
+            We assume they can't be negative. Therefore, the initial max value is set to 0.</p>
+        <div id = "codeForm">
+            <code id = "code"> int max = 0; </code>
+        </div>
 
-            <div><b>Input:</b> satisfaction = [-1,-4,-5]</div>
-            <div><b>Output: </b>0</div>
-            <div><b>Explanation:</b> People do not like the dishes. No dish is prepared.</div>
+        <p>3. Define a variable called time to 1 and a variable sum to 0.</p>
+        <div id = "codeForm">
+            <code id = "code">         int sum = 0;<br>
+                int time = 1;</code>
+        </div>
 
+        <p>4. Use a nested for loop to iterate over the satisfaction score array and calculate the sum. A nested loop is necessary because, for each iteration,
+             we want to exclude the elements included in the previous calculation, starting afresh from the current element.</p>
+        <div id = "codeForm">
+            <code id = "code">  for(int i = 0; i < satisfaction.length; i++){ <br>
+                &emsp;for(int j = i; j < satisfaction.length; j++){ <br>
+                    &emsp;&emsp;sum += satisfaction[j] * time;<br>
+                    &emsp;&emsp;time++;
+                 } </code>
+        </div>
+
+        <p>5. Compare it with the current max value. Always retain the higher value between the current max and the new sum.</p>
+        <div id = "codeForm">
+            <code id = "code"> max = Math.max(sum, max); </code>
+        </div>
+
+        <p>6. After each iteration, reset the sum and time variables to their initial values to prepare for the next loop.</p>
+        <div id = "codeForm">
+            <code id = "code"> sum = 0;<br>time = 1; </code>
+        </div>
+
+        <p>7. After the loops are complete, the max variable should hold the highest satisfaction score. Return this as the final output.</p>
+        <div id = "codeForm">
+            <code id = "code"> return max;</code>
+        </div>
+
+        <p>1. First, arrange the customer satisfaction scores in ascending order. This step will help the calculation of the maximum value later.</p>
+        <div id = "codeForm">
+            <code id = "code"> Arrays.sort(satisfaction); </code>
         </div>
     </section>
 
@@ -59,7 +68,6 @@
         <p>Advisor: Professor Pisan</p>
         <p>Project by: Meng Zhang</p>
     </footer>
-
 </body>
 
 </html>
