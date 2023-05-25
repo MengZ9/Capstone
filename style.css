@@ -53,3 +53,41 @@ body {
   }
 
 
+  footer {
+    position: fixed;
+    bottom: 0;
+    right: 20px;
+    left: 0;
+    text-align: right;
+    padding: 3px;
+    color: black;
+  }
+
+  #displayAnswer {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+
+  }
+
+img {
+    border-radius: 10px;
+    width: 700px;
+    height: auto;
+}
+
+
+#codeForm {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+#code {
+    background-color: black;
+    padding: 4px 6px;
+    font-family: Consolas, monospace;
+    font-size: 14px;
+    color: white;
+    display: inline-block;
+  }
